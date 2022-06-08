@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;   
+}
+
+.background-container {
+    background-color: #184e77;
+    min-height: inherit;
+    overflow-x: hidden;
+    z-index: -100;
+}
+
+.bubbles {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    
+}
+
+.bubbles span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    background-color: #d9ed92;
+    box-shadow: 0 0 0 7px #76c893,
+                0 0 50px #d9ed92,
+                0 0 100px #d9ed92;
+
+    transform: scale(0.2);
+
+    margin-right: calc((100vw / 40) - 30px);
+
+    animation: bubbleUp 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+@keyframes bubbleUp {
+    0% {
+        transform: translateY(99vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.bubbles span:nth-child(even) {
+    background-color: #99d98c;
+    box-shadow: 0 0 0 7px #34a0a4,
+                0 0 50px #99d98c,
+                0 0 100px #99d98c;
+}
+
